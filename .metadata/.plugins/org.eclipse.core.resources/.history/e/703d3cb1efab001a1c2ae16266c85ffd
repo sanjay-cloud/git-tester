@@ -1,0 +1,17 @@
+package github;
+
+import java.io.File;
+
+import org.eclipse.jgit.api.Git;
+import org.eclipse.jgit.api.errors.GitAPIException;
+import org.eclipse.jgit.api.errors.InvalidRemoteException;
+import org.eclipse.jgit.api.errors.TransportException;
+import org.eclipse.jgit.transport.UsernamePasswordCredentialsProvider;
+
+public class RepositoryCloner {
+	public void cloneRepository() throws InvalidRemoteException, TransportException, GitAPIException {
+		Git git = Git.cloneRepository().setURI("https://github.com/sanjay-cloud/private-test.git")
+				.setDirectory(new File("/path/to/reposter"))
+				.setCredentialsProvider(new UsernamePasswordCredentialsProvider("sanjay-cloud", "githubSan8")).call();
+	}
+}

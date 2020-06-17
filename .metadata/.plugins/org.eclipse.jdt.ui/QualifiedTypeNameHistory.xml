@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<qualifiedTypeNameHistroy>
+<fullyQualifiedTypeName name="org.eclipse.jgit.transport.UsernamePasswordCredentialsProvider"/>
+<fullyQualifiedTypeName name="org.eclipse.jgit.lib.Repository"/>
+<fullyQualifiedTypeName name="org.eclipse.jgit.revwalk.RevCommit"/>
+<fullyQualifiedTypeName name="org.eclipse.jgit.lib.ObjectId"/>
+<fullyQualifiedTypeName name="org.eclipse.jgit.api.ListBranchCommand.ListMode"/>
+<fullyQualifiedTypeName name="java.util.List"/>
+<fullyQualifiedTypeName name="org.eclipse.jgit.lib.Ref"/>
+<fullyQualifiedTypeName name="org.eclipse.jgit.revwalk.RevWalk"/>
+<fullyQualifiedTypeName name="org.eclipse.jgit.api.RevertCommand"/>
+<fullyQualifiedTypeName name="org.eclipse.jgit.api.Git"/>
+<fullyQualifiedTypeName name="java.io.File"/>
+<fullyQualifiedTypeName name="github.RepositoryPusher"/>
+</qualifiedTypeNameHistroy>

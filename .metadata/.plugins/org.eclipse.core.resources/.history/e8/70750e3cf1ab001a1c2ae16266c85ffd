@@ -1,0 +1,33 @@
+package github;
+
+import java.io.File;
+import java.io.IOException;
+
+import org.eclipse.jgit.api.Git;
+import org.eclipse.jgit.api.errors.GitAPIException;
+import org.eclipse.jgit.api.errors.NoFilepatternException;
+import org.eclipse.jgit.transport.UsernamePasswordCredentialsProvider;
+
+public class RepositoryPusher {
+	public static void commitAndPush(String repositoryPath, String message, String username, String password,
+			String uri) throws IOException, NoFilepatternException, GitAPIException {
+		Git git = Git.open(new File(repositoryPath));
+		git.add().addFilepattern(".").call();
+		git.commit().setMessage(message).call();
+		git.push().setCredentialsProvider(new UsernamePasswordCredentialsProvider(username, password))
+				.setRemote(uri).add("master").call();
+	}
+
+	public static void main(String[] args) {
+		try {
+			commitAndPush("/path/to/reposter", "remote test", "sanjay-cloud", "githubSan8",
+					"https://github.com/sanjay-cloud/private-test.git");
+		} catch (NoFilepatternException e) {
+			e.printStackTrace();
+		} catch (IOException e) {
+			e.printStackTrace();
+		} catch (GitAPIException e) {
+			e.printStackTrace();
+		}
+	}
+}

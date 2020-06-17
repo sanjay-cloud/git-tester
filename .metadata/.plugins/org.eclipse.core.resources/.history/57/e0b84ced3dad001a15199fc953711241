@@ -1,0 +1,16 @@
+package github;
+
+import java.io.File;
+
+import org.eclipse.jgit.api.Git;
+import org.eclipse.jgit.transport.UsernamePasswordCredentialsProvider;
+
+public class RepositoryPuller {
+	public void pullRepository(String username, String password) {
+		Git git = Git.open(new File(repositoryPath));
+		git.add().addFilepattern(".").call();
+		git.commit().setMessage(message).setCommitter("sanjay", "sanjay").call();
+		git.pull().setCredentialsProvider(new UsernamePasswordCredentialsProvider(username, password))
+				.setRemote("origin").setRemoteBranchName("").call();
+	}
+}

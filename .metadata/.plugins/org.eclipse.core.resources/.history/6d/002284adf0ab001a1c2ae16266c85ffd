@@ -1,0 +1,15 @@
+package github;
+
+import org.eclipse.jgit.api.Git;
+import org.eclipse.jgit.transport.UsernamePasswordCredentialsProvider;
+
+public class RepositoryPusher {
+	public void commitAndPush() {
+			Git git = Git.open(new File("/path/to/reposter"))
+			git.add().addFilepattern(".").call();
+			git.commit().setMessage("remote test sss").call();
+			git.push().
+					.setCredentialsProvider(new UsernamePasswordCredentialsProvider("sanjay-cloud", "githubSan8"))
+					.setRemote("https://github.com/sanjay-cloud/private-test.git").add("master").call();
+	}
+}
